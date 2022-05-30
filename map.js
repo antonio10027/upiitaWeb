@@ -395,7 +395,7 @@ function addRowHandlers() {
         }(rows[i]);
     }
 }
-//list of wms_layers_ in window on click of button
+//lista de las capas wms disponibles
 
 function wms_layers() {   
      
@@ -604,7 +604,7 @@ function clear_all() {
 function show_hide_querypanel() {
     if (document.getElementById("query_tab").style.visibility == "hidden") {
 
-	    document.getElementById("query_panel_btn").innerHTML = "☰ Cerrar Panel de consultas";
+	    document.getElementById("query_panel_btn").innerHTML = "☰ Cerrar Capas Disponibles";
         document.getElementById("query_panel_btn").setAttribute("class", "btn btn-danger btn-sm");
 		document.getElementById("query_tab").style.visibility = "visible";
         document.getElementById("query_tab").style.width = "20%";
@@ -613,7 +613,7 @@ function show_hide_querypanel() {
         document.getElementById('table_data').style.left = '20%';
         map.invalidateSize();
     } else {
-        document.getElementById("query_panel_btn").innerHTML = "☰ Abrir Panel de consultas";
+        document.getElementById("query_panel_btn").innerHTML = "☰ Capas Disponibles";
         document.getElementById("query_panel_btn").setAttribute("class", "btn btn-success btn-sm");
         document.getElementById("query_tab").style.width = "0%";
         document.getElementById("map").style.width = "100%";

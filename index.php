@@ -18,7 +18,7 @@
     <div id="map" class="map">
         <button onclick="wms_layers()" type="button" id="wms_layers_btn" class="btn btn-success btn-sm">Capas Disponibles</button>
         <button onclick="clear_all()" type="button" id="clear_btn" class="btn btn-warning btn-sm">Borrar</button>
-        <button onclick="show_hide_querypanel()" type="button" id="query_panel_btn" class="btn btn-success btn-sm">☰ Abrir Panel de Consultas</button>
+        <button onclick="show_hide_querypanel()" type="button" id="query_panel_btn" class="btn btn-success btn-sm">☰ Capas Disponibles</button>
         <div id="legend"></div>
         <button onclick="show_hide_legend()" type="button" id="legend_btn" class="btn btn-success btn-sm">☰ Mostrar Leyenda</button>
         <button onclick="info()" type="button" id="info_btn" class="btn btn-success btn-sm">☰ Mostrar Información</button>
