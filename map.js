@@ -609,7 +609,7 @@ function show_hide_querypanel() {
 		document.getElementById("query_tab").style.visibility = "visible";
         document.getElementById("query_tab").style.width = "20%";
         document.getElementById("map").style.width = "79%";
-        document.getElementById("map").style.left = "20%";        
+        document.getElementById("map").style.left = "50%";        
         document.getElementById('table_data').style.left = '20%';
 
         $.ajax({
@@ -621,10 +621,12 @@ function show_hide_querypanel() {
                 // console.log("here");
                 $('<tr></tr>').html('<th>Name</th><th>Title</th><th>Abstract</th>').appendTo('#query_tab');
                 $(xml).find('Layer').find('Layer').each(function() {
+                   
                     var name = $(this).children('Name').text();                
                     var title = $(this).children('Title').text();
-                    var abst = $(this).children('Abstract').text();               
-                    $('<tr></tr>').html('<td>' + name + '</td><td>' + title + '</td><td>' + abst + '</td>').appendTo('#table_wms_layers');
+                    var abst = $(this).children('Abstract').text();  
+                    console.log(abst);             
+                    $('<tr></tr>').html('<td>' + name + '</td><td>' + title + '</td><td>' + abst + '</td>').appendTo('#table_wms_layers').appendTo('#query_tab');
                     
                 });
                 addRowHandlers1();
@@ -632,8 +634,8 @@ function show_hide_querypanel() {
         });   
 
         function addRowHandlers1() {    
-            var rows = document.getElementById("query_tab").rows;
-            var table = document.getElementById('query_tab');
+            var rows = document.getElementById("table_wms_layers").rows;
+            var table = document.getElementById('table_wms_layers');
             var heads = table.getElementsByTagName('th');
             var col_no;
             for (var i = 0; i < heads.length; i++) {       
