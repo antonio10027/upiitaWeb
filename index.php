@@ -33,24 +33,8 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <label for="layer"><b>Selecionar Capa</b></label>
-                <select id="layer" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Seleccionar Capa</option>
-                </select>
-                <br>
-                <label for="attributes"><b>Seleccionar Atributo</b></label>
-                <select id="attributes" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Seleccionar Atributo</option>
-                </select>
-                <br>
-                <label for="operator"><b>Seleccionar Operador</b></label>
-                <select id="operator" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Seleccionar Operador</option>
-                </select>
-                <br>
-                <label for="value">Valor</label>
-                <input type="text" class="form-control form-select-sm" id="value" name="value">
-                <br>
+                
+               
                 <button onclick="query()" type="button" class="btn btn-danger btn-sm">Cargar Capa</button>
 
             </div>
