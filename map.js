@@ -668,7 +668,7 @@ function show_hide_querypanel() {
 
  */
 
-        wms_layers()
+        wms_layers();
         map.invalidateSize();
     } else {
         document.getElementById("query_panel_btn").innerHTML = "☰ Capas Disponibles";

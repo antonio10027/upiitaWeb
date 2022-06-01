@@ -23,7 +23,7 @@
      position: absolute;
      padding: 0.5% 0%;
      left: 0%;
-     width: 0%;
+     max-width: 30%;
      height: 100%;
      //border-style: solid;
      //border-color: black;
@@ -126,13 +126,15 @@
      position: sticky;
      top: 0px;
      background-color: rgb(122, 209, 100);
+    
  }
 
  .modal-dialog {
      max-width: 60% !important;
-     height: 60% !important;
-     top: 18% !important;
-
+     height: 95% !important;
+     top: 1% !important;
+    margin-left: 0%;
+    margin-right: 60%;
 
  }
 
