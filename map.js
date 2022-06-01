@@ -611,7 +611,7 @@ function show_hide_querypanel() {
         document.getElementById("map").style.width = "79%";
         document.getElementById("map").style.left = "50%";        
         document.getElementById('table_data').style.left = '20%';
-
+/*
         $.ajax({
             type: "GET",
             url: "http://localhost:8080/geoserver/wms?request=getCapabilities",
@@ -666,9 +666,9 @@ function show_hide_querypanel() {
             }
         }
 
+ */
 
-
-
+        wms_layers()
         map.invalidateSize();
     } else {
         document.getElementById("query_panel_btn").innerHTML = "☰ Capas Disponibles";

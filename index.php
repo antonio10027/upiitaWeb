@@ -35,17 +35,6 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 
-               
-                <button onclick="query()" type="button" class="btn btn-danger btn-sm">Cargar Capa</button>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div id="table_data"></div>
-    <!-- Scrollable modal -->
-
     <div class="modal fade" id="wms_layers_window" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" id="movableDialog">
             <div class="modal-content">
@@ -64,6 +53,16 @@
             </div>
         </div>
     </div>
+               
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div id="table_data"></div>
+    <!-- Scrollable modal -->
+
 
 
 
