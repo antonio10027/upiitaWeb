@@ -517,6 +517,7 @@ function add_layer() {
 }
 
 function close_wms_window(){
+    show_hide_querypanel()
 layer_name = undefined;
 }
 // function on click of getinfo
