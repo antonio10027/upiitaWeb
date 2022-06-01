@@ -601,7 +601,7 @@ function clear_all() {
     map.invalidateSize();
 
 }
-//esta funcion se manda a llamar en el indes.php
+//esta funcion se manda a llamar en el index.php
 function show_hide_querypanel() {
     if (document.getElementById("query_tab").style.visibility == "hidden") {
 
@@ -612,62 +612,7 @@ function show_hide_querypanel() {
         document.getElementById("map").style.width = "79%";
         document.getElementById("map").style.left = "30%";        
         document.getElementById('table_data').style.left = '20%';
-/*
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:8080/geoserver/wms?request=getCapabilities",
-            dataType: "xml",
-            success: function(xml) {
-                $('#query_tab').empty();
-                // console.log("here");
-                $('<tr></tr>').html('<th>Name</th><th>Title</th><th>Abstract</th>').appendTo('#query_tab');
-                $(xml).find('Layer').find('Layer').each(function() {
-                   
-                    var name = $(this).children('Name').text();                
-                    var title = $(this).children('Title').text();
-                    var abst = $(this).children('Abstract').text();  
-                    console.log(abst);             
-                    $('<tr></tr>').html('<td>' + name + '</td><td>' + title + '</td><td>' + abst + '</td>').appendTo('#table_wms_layers').appendTo('#query_tab');
-                    
-                });
-                addRowHandlers1();
-            }
-        });   
 
-        function addRowHandlers1() {    
-            var rows = document.getElementById("table_wms_layers").rows;
-            var table = document.getElementById('table_wms_layers');
-            var heads = table.getElementsByTagName('th');
-            var col_no;
-            for (var i = 0; i < heads.length; i++) {       
-                var head = heads[i];       
-                if (head.innerHTML == 'Name') {
-                    col_no = i + 1;            
-                }
-            }
-            for (i = 0; i < rows.length; i++) {
-                rows[i].onclick = function() {
-                    return function() {
-                        $(function() {
-                            $("#table_wms_layers td").each(function() {
-                                $(this).parent("tr").css("background-color", "white");
-                            });
-                        });
-                        var cell = this.cells[col_no - 1];
-                        layer_name = cell.innerHTML; 
-                        $(document).ready(function() {
-                            $("#table_wms_layers td:nth-child(" + col_no + ")").each(function() {
-                                if ($(this).text() == layer_name) {
-                                    $(this).parent("tr").css("background-color", "grey");
-                                }
-                            });
-                        });               
-                    };
-                }(rows[i]);
-            }
-        }
-
- */
 
         wms_layers();
         map.invalidateSize();
