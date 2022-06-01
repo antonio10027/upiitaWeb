@@ -1,0 +1,11 @@
+[33m29318e6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m syagregando comentarios al código
+[33m11188b7[m sya se muestra la tabla con los tamaños requeridos en el panel izquiero y no bloquea la pantañlla.
+[33m2027d4e[m sshay conflicto con la tabla dado que no abarca todo el espacio en blanco y se resolvió la parte del bloqueo de pantalla por parte del modal
+[33ma1bf6c6[m sse tiene el conflicto que el div dentro del cual está la tabla, interfiere con los demás botones, si se quita se encoge mucho la tabla
+[33m7997253[m se agregó la tabla dentro del query tab
+[33ma2777e8[m ese añadió la tabla a el panel izquierdo, ya cuenta con la carga de los datos
+[33m5293a75[m ese coloca el código de la ventana de capas dentro de elÃ panel izquierdo para mostrarlas
+[33m5a2af32[m eln el panel izquierdo se eliminó el contenido para que reemplace por el nuevo
+[33me51adf1[m cambio a botones con texto capas
+[33maf2757f[m proyecto sin cambios
+[33mb801472[m[33m ([m[1;31morigin/master[m[33m)[m 20220501

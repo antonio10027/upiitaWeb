@@ -571,7 +571,7 @@ function clear_all() {
     if (geojson) {
         map.removeLayer(geojson);
     }
-    map.flyTo([23.00, 82.00], 4);
+    map.flyTo([22.00, -22.00], 2);
 
     document.getElementById("query_panel_btn").innerHTML = "☰ Abrir Panel de consultas";
 	document.getElementById("query_panel_btn").setAttribute("class", "btn btn-success btn-sm");
