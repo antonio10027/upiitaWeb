@@ -26,22 +26,29 @@
 
 
     </div>
+    <!-- se optó por meterl el div con id "wms_layers_window dentro del query_tab para que se pueda ocultar cuando sea
+    necesario, para ajustar su tamaño es necesario mover la propiedad de style con width de 30% para que no bloquee la 
+    pantalla completa a la hora de abrirlo. en elemento que está con clase modal dialog tambien cambiará de tamaño dado que 
+    tiene un porcentaje de un ancho maximo en el archivo de style.css que está en la carpeta raiz"-->
     <div id="query_tab">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
            
             </div>
         </nav>
-        <div class="modal" id="wms_layers_window" style="width: 50%;" >
+        <div class="modal" id="wms_layers_window" style="width: 30%;" >
         <div class="modal-dialog modal-dialog-scrollable" id="movableDialog"  >
-            <div class="modal-content">
+            <div class="modal-content" >
+                
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Available WMS Layers</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Capas Disponibles</h5>
                 </div>
+
                 <div class="modal-body">
                     <table id="table_wms_layers" class="table table-hover">
                     </table>
                 </div>
+
                 <div class="modal-footer">
                     <button onclick="close_wms_window()" type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
                     <button onclick="add_layer()" type="button" id="add_map_btn" class="btn btn-primary btn-sm">Add Layer to Map</button>

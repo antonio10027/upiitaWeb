@@ -605,12 +605,12 @@ function clear_all() {
 function show_hide_querypanel() {
     if (document.getElementById("query_tab").style.visibility == "hidden") {
 
-	    document.getElementById("query_panel_btn").innerHTML = "☰ Cerrar Capas Disponibles";
+	    document.getElementById("query_panel_btn").innerHTML = "Mostrando Capas Disponibles!";
         document.getElementById("query_panel_btn").setAttribute("class", "btn btn-danger btn-sm");
 		document.getElementById("query_tab").style.visibility = "visible";
         document.getElementById("query_tab").style.width = "20%";
         document.getElementById("map").style.width = "79%";
-        document.getElementById("map").style.left = "50%";        
+        document.getElementById("map").style.left = "30%";        
         document.getElementById('table_data').style.left = '20%';
 /*
         $.ajax({

@@ -130,13 +130,13 @@
  }
 
  .modal-dialog {
-     max-width: 70% !important;
+     max-width: 100% !important;
      height: 95% !important;
-     top: 1% !important;
+     top: 0% !important;
     margin-left: 0%;
-    margin-right: 60%;
 
  }
+
 
  .form-select {
      left: 0%;
