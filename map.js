@@ -71,9 +71,10 @@ function legend() {
     element.appendChild(head);
 
 	overlays.eachLayer(function (layer) {	
-        var head = document.createElement("p");        
+        var head = document.createElement("p");      
+       // console.log(layers);  
         var txt = document.createTextNode(layer.options.layers); 
-        console.log(txt);           
+       // console.log(txt);           
         head.appendChild(txt);
         var element = document.getElementById("legend");
         element.appendChild(head);
@@ -295,7 +296,7 @@ function onEachFeature(feature, layer) {
 
         if (feature) {
 
-            console.log(feature);
+           // console.log(feature);
             $(function() {
                 $("#table td").each(function() {
                     $(this).parent("tr").css("background-color", "white");
@@ -346,7 +347,7 @@ function addRowHandlers() {
     for (var i = 0; i < heads.length; i++) {
         // Take each cell
         var head = heads[i];
-        //alert(head.innerHTML);
+        console.log(head.innerHTML);
         if (head.innerHTML == 'id') {
             col_no = i + 1;
             //alert(col_no);
@@ -408,14 +409,17 @@ function wms_layers() {
         type: "GET",
         url: "http://localhost:8080/geoserver/wms?request=getCapabilities",
         dataType: "xml",
+       
         success: function(xml) {
+            console.log(xml);
             $('#table_wms_layers').empty();
             // console.log("here");
             $('<tr></tr>').html('<th>Name</th><th>Title</th><th>Abstract</th>').appendTo('#table_wms_layers');
             $(xml).find('Layer').find('Layer').each(function() {
                 var name = $(this).children('Name').text();                
                 var title = $(this).children('Title').text();
-                var abst = $(this).children('Abstract').text();               
+                var abst = $(this).children('Abstract').text(); 
+                              
                 $('<tr></tr>').html('<td>' + name + '</td><td>' + title + '</td><td>' + abst + '</td>').appendTo('#table_wms_layers');
                 
             });
@@ -458,6 +462,16 @@ function addRowHandlers1() {
 }
 
 }
+
+function IraDashBoard(){
+    location.href="../geojsonDashboard1";
+console.log("si voy");
+
+
+}
+
+
+
 // add wms layer to map on click of button
 function add_layer() {
     var name = layer_name.split(":");    

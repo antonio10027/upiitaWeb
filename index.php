@@ -32,12 +32,13 @@
     pantalla completa a la hora de abrirlo. en elemento que está con clase modal dialog tambien cambiará de tamaño dado que 
     tiene un porcentaje de un ancho maximo en el archivo de style.css que está en la carpeta raiz"-->
     <div id="query_tab">
-        <nav>
+       
+        <div class="modal" id="wms_layers_window" style="width: 30%;" >
+         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-           
+            <button  type="button" onclick="IraDashBoard()" id="irDashboard" class="btn btn-dark btn-sm">Ir a Dashboard GeoJson</button>
             </div>
         </nav>
-        <div class="modal" id="wms_layers_window" style="width: 30%;" >
         <div class="modal-dialog modal-dialog-scrollable" id="movableDialog"  >
             <div class="modal-content" >
                 
