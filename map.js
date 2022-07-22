@@ -6,7 +6,9 @@ var popup = L.popup();
 
 
 map = L.map('map', {
-   
+    fullscreenControl: {
+        pseudoFullscreen: false
+    },
     crs: L.CRS.EPSG4326,
     center: [19.451999433115688, -99.15915353758189],
     zoom: 10,
@@ -32,17 +34,17 @@ var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var overlays = L.layerGroup();
 
 var base = L.layerGroup();
-base.addLayer(hillshade, 'hillshade');
+//base.addLayer(hillshade, 'hillshade');
 base.addLayer(satellite, 'satellite');
 layerControl = L.control.layers().addTo(map);
-layerControl.addBaseLayer(hillshade, "hillshade");
+//layerControl.addBaseLayer(hillshade, "hillshade");
 layerControl.addBaseLayer(satellite, "satellite");
-layerControl.addBaseLayer(OSM, "OSM");
+//layerControl.addBaseLayer(OSM, "OSM");
 
 // Zoom bar
-var zoom_bar = new L.Control.ZoomBar({
+/*var zoom_bar = new L.Control.ZoomBar({
     position: 'topleft'
-}).addTo(map);
+}).addTo(map);*/
 
 // mouse position
 L.control.mousePosition({
@@ -79,7 +81,7 @@ function legend() {
         var element = document.getElementById("legend");
         element.appendChild(head);
         var img = new Image();
-        img.src = "http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" +layer.options.layers;
+        img.src = "http://148.204.86.216/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" +layer.options.layers;
         var src = document.getElementById("legend");
         src.appendChild(img);    
     });	
@@ -93,7 +95,7 @@ legend();
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/geoserver/wfs?request=getCapabilities",
+        url: "http://148.204.86.216/geoserver/wfs?request=getCapabilities",
         dataType: "xml",
         success: function(xml) {
             var select = $('#layer');
@@ -125,7 +127,7 @@ $(function() {
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/geoserver/wfs?service=WFS&request=DescribeFeatureType&version=1.1.0&typeName=" + value_layer,
+                url: "http://148.204.86.216/geoserver/wfs?service=WFS&request=DescribeFeatureType&version=1.1.0&typeName=" + value_layer,
                 dataType: "xml",
                 success: function(xml) {
                     var select = $('#attributes');                    
@@ -216,7 +218,7 @@ function query() {
         value_txt = value_txt;        
     }
 
-    var url = "http://localhost:8080/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=" + value_layer + "&CQL_FILTER=" + value_attribute + "%20" + value_operator + "%20" + value_txt + "&outputFormat=application/json"
+    var url = "http://148.204.86.216/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=" + value_layer + "&CQL_FILTER=" + value_attribute + "%20" + value_operator + "%20" + value_txt + "&outputFormat=application/json"
     //console.log(url);
     $.getJSON(url, function(data) {
 
@@ -399,7 +401,7 @@ function addRowHandlers() {
 //lista de las capas wms disponibles
 //esta funcion tambien se manda a llamar en el index
 function wms_layers() {   
-     
+    
   $("#wms_layers_window").modal({backdrop: false});
   //$("#wms_layers_window").draggable();
   $("#wms_layers_window").modal('show');    
@@ -407,7 +409,7 @@ function wms_layers() {
   $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/geoserver/wms?request=getCapabilities",
+        url: "http://148.204.86.216/geoserver/wms?request=getCapabilities",
         dataType: "xml",
        
         success: function(xml) {
@@ -464,7 +466,7 @@ function addRowHandlers1() {
 }
 
 function IraDashBoard(){
-    location.href="../geojsonDashboard1";
+    location.href="coropleta";
 console.log("si voy");
 
 
@@ -475,7 +477,7 @@ console.log("si voy");
 // add wms layer to map on click of button
 function add_layer() {
     var name = layer_name.split(":");    
-    var layer_wms = L.tileLayer.wms('http://localhost:8080/geoserver/wms?', {
+    var layer_wms = L.tileLayer.wms('http://148.204.86.216/geoserver/wms?', {
         layers: layer_name,
         transparent: 'true',
         format: 'image/png'
@@ -488,7 +490,7 @@ function add_layer() {
     $(document).ready(function() {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/geoserver/wms?request=getCapabilities",
+            url: "http://148.204.86.216/geoserver/wms?request=getCapabilities",
             dataType: "xml",
             success: function(xml) {
                 $(xml).find('Layer').find('Layer').each(function() {
@@ -564,7 +566,7 @@ function getinfo(e) {
         content = '';
     }	
 	overlays.eachLayer(function (layer) {
-	   var url = 'http://localhost:8080/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=' + layer.options.layers + '&LAYERS=' + layer.options.layers + '&INFO_FORMAT=text%2Fhtml&X=' + x + '&Y=' + y + '&CRS=EPSG%3A4326&STYLES=&WIDTH=' + width + '&HEIGHT=' + height + '&BBOX=' + bbox;
+	   var url = 'http://148.204.86.216/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=' + layer.options.layers + '&LAYERS=' + layer.options.layers + '&INFO_FORMAT=text%2Fhtml&X=' + x + '&Y=' + y + '&CRS=EPSG%3A4326&STYLES=&WIDTH=' + width + '&HEIGHT=' + height + '&BBOX=' + bbox;
        console.log(url);   
 	   $.get(url, function(data) {
             content += data;
@@ -585,7 +587,7 @@ function clear_all() {
     if (geojson) {
         map.removeLayer(geojson);
     }
-    map.flyTo([22.00, -22.00], 2);
+    map.flyTo([19.451999433115688, -99.15915353758189], 10);
 
     document.getElementById("query_panel_btn").innerHTML = "☰ Abrir Panel de consultas";
 	document.getElementById("query_panel_btn").setAttribute("class", "btn btn-success btn-sm");
@@ -618,7 +620,7 @@ function clear_all() {
 //esta funcion se manda a llamar en el index.php
 function show_hide_querypanel() {
     if (document.getElementById("query_tab").style.visibility == "hidden") {
-
+      
 	    document.getElementById("query_panel_btn").innerHTML = "Mostrando Capas Disponibles!";
         document.getElementById("query_panel_btn").setAttribute("class", "btn btn-danger btn-sm");
 		document.getElementById("query_tab").style.visibility = "visible";
@@ -626,7 +628,12 @@ function show_hide_querypanel() {
         document.getElementById("map").style.width = "79%";
         document.getElementById("map").style.left = "30%";        
         document.getElementById('table_data').style.left = '20%';
-
+        
+        $(function() {
+            $('#datepickerInicio').datepicker();
+            $('#datepickerFin').datepicker();
+        });
+    
 
         wms_layers();
         map.invalidateSize();
